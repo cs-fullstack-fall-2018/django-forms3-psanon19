@@ -35,11 +35,6 @@ def edit(request, pk):
 
 def delete(request, pk):
     the_model = get_object_or_404(FormModel, pk=pk)
-    form = PostForm(request.DELETE, instance=the_model)
-    if form.is_valid():
-        form.save()
-        return redirect("list")
-    else:
-        the_model = get_object_or_404(FormModel, pk=pk)
-        form = PostForm(instance=the_model)
-    return render(request, 'forms_app/input.html', {'form': form})
+    print(the_model)
+    the_model.delete()
+    return redirect("list")
