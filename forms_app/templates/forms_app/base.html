@@ -3,9 +3,11 @@
 <head>
     {% load static %}
     <title>Memphis Non-Profit</title>
-    <link rel="stylesheet" href="{% static 'forms_app/bootstrap.css' %}">
-    <script src="{% static 'forms_app/jquery-3.3.1.min.js' %}"></script>
-    <script src="{% static 'forms_app/bootstrap.js' %}"></script>
+    <link rel="stylesheet" href="{% static 'forms_app/bootstrap/bootstrap.css' %}">
+    <script src="{% static 'forms_app/bootstrap/jquery-3.3.1.min.js' %}"></script>
+    <script src="{% static 'forms_app/bootstrap/bootstrap.js' %}"></script>
+    <link rel="stylesheet" href="{% static 'forms_app/css/forms_app.css' %}"/>
+
 </head>
 <body>
 
@@ -14,8 +16,8 @@
 
         <header>
             <div class="jumbotron">
-                <p>Memphis Non-Profit</p>
-                <p> <a href="{% url 'add' %}">New Post</a> </p>
+                <h1>Memphis Non-Profit</h1>
+                <b><a href="{% url 'add' %}" class="btn btn-primary">New Post</a></b>
             </div>
         </header>
 
@@ -24,6 +26,12 @@
             {% endblock %}
 
         </div>
+
+        <footer>
+            <div align="center" class="footer">
+                <b><i>A NightxGamer Website</i></b>
+            </div>
+        </footer>
 
     </div>
 

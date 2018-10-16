@@ -3,14 +3,26 @@
 {% block info %}
 
 	{% if form_list %}
-		<ul>
+<div class="row" align="center">
 			{% for eachItem in form_list %}
-				<li>{{ eachItem.name }} <a href="{% url 'edit' pk=eachItem.pk %}">Edit</a>/
-					<a href="{% url 'delete' pk=eachItem.pk %}">Delete</a></li>
+<div class="card" style="width: 18rem;">
+	<img class="card-img-top" src="{{ eachItem.image_url}}"
+		 alt="Card image cap">
+	<div class="card-body">
+		<h5 class="card-title">
+				{{ eachItem.name }}
+		</h5>
+		<p class="card-text">
+			{{ eachItem.description}}
+		</p>
+		<a href="{% url 'edit' pk=eachItem.pk %}" class="btn btn-primary">Edit</a>
+		<a href="{% url 'delete' pk=eachItem.pk %}" class="btn btn-primary">Delete</a>
+	</div>
+</div>
 			{% endfor %}
-		</ul>
+</div>
 		{% else %}
 		<p>Nothing available.</p>
-	{% endif %}
+		{% endif %}
 
 {% endblock %}
