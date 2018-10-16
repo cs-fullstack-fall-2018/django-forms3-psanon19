@@ -3,11 +3,13 @@
 <link rel="stylesheet" href="{% static 'forms_app/bootstrap.css' %}">
 <div class="jumbotron">
 	<p>This is the forms app</p>
+	<p> <a href="{% url 'add' %}">New Post</a> </p>
 </div>
 	{% if form_list %}
 		<ul>
 			{% for eachItem in form_list %}
-				<li>{{ eachItem.name }}</li>
+				<li>{{ eachItem.name }} <a href="{% url 'edit' pk=eachItem.pk %}">Edit</a>/
+					<a href="{% url 'delete' pk=eachItem.pk %}">Delete</a></li>
 			{% endfor %}
 		</ul>
 		{% else %}
